@@ -19,6 +19,8 @@ public class MemoryCustomerRepository implements CustomerRepository {
 
     @Override
     public void insert(Customer customer) {
+
+
         customer.setId(customer.toString());
         customers.add(customer);
     }

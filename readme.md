@@ -60,8 +60,8 @@ Note: Make an exception and leave setter for customer id, since it's used to det
 
 1. [I/O Test 1](https://github.com/enorkus/customer-app-io/blob/master/3.solution.png)
 
-### 4. Exercise: Input validation
-At the moment users can enter almost anything they want and it would get stored. The application needs validation to check for invalid input.
+### 4. Exercise: Input com.enorkus.academy.validation
+At the moment users can enter almost anything they want and it would get stored. The application needs com.enorkus.academy.validation to check for invalid input.
 
 **Requirements:**
 
@@ -72,7 +72,7 @@ At the moment users can enter almost anything they want and it would get stored.
 * Validation for mandatory attributes: first name, last name and personal number is implemented.
 * Validator class is implemented to validate the input before formatting/storing.
 * Validator throws existing MandatoryValueMissingException if any of the mandatory inputs are missing.
-* An appropriate validation messages are passed to MandatoryValueMissingException when throwing them.
+* An appropriate com.enorkus.academy.validation messages are passed to MandatoryValueMissingException when throwing them.
 * Validator class is used inside CustomerService.
 * HTTP error code 422 and appropriate message is seen under table when trying to submit invalid inputs.
 * Submitting spaces as input should also fail with the same exception and message.
@@ -84,19 +84,19 @@ At the moment users can enter almost anything they want and it would get stored.
 3. [I/O Test 3](https://github.com/enorkus/customer-app-io/blob/master/4.2.solution.png)
 4. [I/O Test 4](https://github.com/enorkus/customer-app-io/blob/master/4.3.solution.png)
 
-### 4.1 Exercise: Input validation
+### 4.1 Exercise: Input com.enorkus.academy.validation
 
 **Requirements:**
-* Age is now also a mandatory input, so validation for age restriction has to be implemented. Also only LT, LV, EE and SE are accepted as country code values if one was provided.
+* Age is now also a mandatory input, so com.enorkus.academy.validation for age restriction has to be implemented. Also only LT, LV, EE and SE are accepted as country code values if one was provided.
 
 **Acceptance criteria:**
 
-* New type of validation Exception class CustomerNotAdultException created for age validation. HTTP code should be the same as for MandatoryValueMissingException.
+* New type of com.enorkus.academy.validation Exception class CustomerNotAdultException created for age com.enorkus.academy.validation. HTTP code should be the same as for MandatoryValueMissingException.
 * Validation for age is implemented: age is mandatory and cannot submit customer with age less than 18.
 * Enum class for country codes is created containing following values: LT, LV, EE, SE
-* New type of validation Exception - InvalidCountryCodeException is created for country code validation. HTTP code should be the same as for MandatoryValueMissingException.
+* New type of com.enorkus.academy.validation Exception - InvalidCountryCodeException is created for country code com.enorkus.academy.validation. HTTP code should be the same as for MandatoryValueMissingException.
 * Validation exception is thrown when trying to submit customer with age under 18.
-* Validation exception is thrown when trying to submit customer with country code other than LT, LV, EE or SE. Country code validation id not triggered if no country code was provided at all.
+* Validation exception is thrown when trying to submit customer with country code other than LT, LV, EE or SE. Country code com.enorkus.academy.validation id not triggered if no country code was provided at all.
 
 **Hint:** See the way MandatoryValueMissingException is constructed. A default message can be passed to @ResponseStatus annotation by attribute: reason = “Message text”.
 
@@ -122,7 +122,7 @@ At the moment users can enter almost anything they want and it would get stored.
 * ValidationException is constructed with String message.
 * CustomerValidator methods replaced with the newly created Validator classes.
 * New validators are created and called inside CustomerValidator.
-* ValidationException along with message is thrown when validation fails.
-* All validation logic stays the same - input output tests are same as for exercise 4.1
+* ValidationException along with message is thrown when com.enorkus.academy.validation fails.
+* All com.enorkus.academy.validation logic stays the same - input output tests are same as for exercise 4.1
 
 
