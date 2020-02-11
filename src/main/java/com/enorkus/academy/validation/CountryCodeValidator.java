@@ -1,7 +1,6 @@
 package com.enorkus.academy.validation;
 
 import com.enorkus.academy.entity.CountryCode;
-import com.enorkus.academy.exception.InvalidCountryCodeException;
 import com.enorkus.academy.exception.ValidationException;
 
 public class CountryCodeValidator extends Validator<String> {

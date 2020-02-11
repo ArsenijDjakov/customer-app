@@ -1,6 +1,5 @@
 package com.enorkus.academy.validation;
 
-import com.enorkus.academy.exception.CustomerNotAdultException;
 import com.enorkus.academy.exception.ValidationException;
 
 public class CustomerAdultValidator extends Validator <Integer> {

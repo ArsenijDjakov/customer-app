@@ -4,5 +4,5 @@ public enum CountryCode {
     LT,
     LV,
     EE,
-    SE;
+    SE
 }
