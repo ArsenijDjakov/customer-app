@@ -37,6 +37,7 @@ public class CustomerService {
 
         customerValidation.validateMandatoryValues(formattedFirstName,formattedLastName,formattedPersonalNumber);
         customerValidation.validateAge(customer.getAge());
+        customerValidation.validateCountryCode(customer.getCountryCode());
         customerRepository.insert(formattedCustomer);
     }
 
