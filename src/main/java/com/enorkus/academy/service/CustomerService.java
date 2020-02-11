@@ -3,15 +3,16 @@ package com.enorkus.academy.service;
 import com.enorkus.academy.entity.Customer;
 import com.enorkus.academy.repository.CustomerRepository;
 import com.enorkus.academy.repository.MemoryCustomerRepository;
-import com.enorkus.academy.validation.CustomerValidation;
+import com.enorkus.academy.validation.*;
 
+import javax.validation.Validation;
 import java.util.List;
 
 public class CustomerService {
 
     private CustomerRepository customerRepository = new MemoryCustomerRepository();
 
-    private CustomerValidation customerValidation = new CustomerValidation();
+    private CustomerValidator customerValidator = new CustomerValidator();
 
     public CustomerService() {
     }
@@ -35,9 +36,7 @@ public class CustomerService {
         .gender(customer.getGender()).maritalStatus(customer.getMaritalStatus()).middleName(customer.getMiddleName())
         .monthlyIncome(customer.getMonthlyIncome()).build();
 
-        customerValidation.validateMandatoryValues(formattedFirstName,formattedLastName,formattedPersonalNumber);
-        customerValidation.validateAge(customer.getAge());
-        customerValidation.validateCountryCode(customer.getCountryCode());
+        customerValidator.validateCustomer(customer);
         customerRepository.insert(formattedCustomer);
     }
 
